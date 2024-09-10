@@ -1,0 +1,48 @@
+void DataStream::write(float val)
+{
+    char type = DataType::FLOAT;
+    write((char*)&type,sizeof(char));
+    write((char*)&val,sizeof(FLOAT));
+}
+void DataStream::write(DOUBLE val)
+{
+    char type = DataType::DOUBLE;
+    write((char*)&type,sizeof(char));
+    write((char*)&val,sizeof(DOUBLE));
+}
+void DataStream::write(STRING val)
+{
+    char type = DataType::STRING;
+    write((char*)&type,sizeof(char));
+    write((char*)&val,sizeof(STRING));
+}
+void DataStream::write(VECTOR val)
+{
+    char type = DataType::VECTOR;
+    write((char*)&type,sizeof(char));
+    write((char*)&val,sizeof(VECTOR));
+}
+void DataStream::write(LIST val)
+{
+    char type = DataType::LIST;
+    write((char*)&type,sizeof(char));
+    write((char*)&val,sizeof(LIST));
+}
+void DataStream::write(MAP val)
+{
+    char type = DataType::MAP;
+    write((char*)&type,sizeof(char));
+    write((char*)&val,sizeof(MAP));
+}
+void DataStream::write(SET val)
+{
+    char type = DataType::SET;
+    write((char*)&type,sizeof(char));
+    write((char*)&val,sizeof(SET));
+}
+void DataStream::write(CUSTOM val)
+{
+    char type = DataType::CUSTOM;
+    write((char*)&type,sizeof(char));
+    write((char*)&val,sizeof(CUSTOM));
+}
